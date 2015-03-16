@@ -1,0 +1,142 @@
+
+QMainWindow{
+	background-color: #272727;
+}
+
+QLabel{
+	color : white;
+}
+
+
+ /*=============================
+		QTableWidget
+==============================*/ 
+
+QTableWidget{
+	color: #DEE0E4;
+	gridline-color: #49546a;
+	background-color: #081a3a;
+	qproperty-showGrid: true;
+	qproperty-alternatingRowColors: false;
+	outline: 0px;
+}
+
+QTableWidget::item{
+height: 25px;
+}
+
+QTableWidget::item:selected{ 
+	background-color:rgba(0,153,255, 60);
+	color: #fff;
+}
+
+QTableWidget::item:selected:!active{
+	color: #fff;
+	background-color:rgba(0,204,255,60);
+}
+
+
+ /*=============================
+		QTreeWidget
+==============================*/ 
+
+QTreeWidget {
+    show-decoration-selected: 1;
+	color: #DEE0E4;
+	gridline-color: #49546a;
+	background-color: #081a3a;
+	qproperty-showGrid: true;
+	qproperty-alternatingRowColors: false;
+	outline: 0px;
+}
+
+QTreeWidget::item {
+    height: 25px;
+}
+ 
+QTreeWidget::item:has-children {
+    background-color:transparent;
+    color: #6B6B6B;
+    font-weight: bold;
+}
+
+QTreeWidget::item:hover {
+    background-color: #f3f3f4;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+QTreeWidget::item:selected {
+    background-color: #b2cefa;
+    color:#353535;
+    border:none;
+	outline: 0px;
+}
+
+QTreeWidget::item:selected:active{
+ 
+}
+
+
+
+ /*=============================
+		QMenuBar
+==============================*/ 
+ 
+QMenuBar{
+	Padding:5px 2px 2px 2px;
+	background-color: #6E6E6E;
+	color: #dbdada;
+	
+	border-bottom: 1px solid #272727;
+
+	
+	background-image: url(:/images/Images/CVSA.png);
+	background-repeat:no-repeat;
+}
+
+QMenuBar:hover{
+	background-image: url(:/images/Images/CVSA_hover.png);
+	background-repeat:no-repeat;
+}
+
+QMenuBar::item {
+     spacing: 3px; /* spacing between menu bar items */
+     padding: 5px 10px;
+     background: transparent;
+	 /*border-top-left-radius:3px;
+	 border-top-right-radius:3px;*/
+}
+
+
+QMenu{
+	background-color: #414141;
+	color:#97999d;
+/* 	selection-background-color: #13769b; */
+	selection-color: #fff;
+/* 	min-width:150px; */
+/* 	border-top: 2px solid #ef4a4a; */
+	padding-top: 4px;
+	/* border:1px solid #878787; */
+}
+
+ QMenuBar::item:selected { /* when selected using mouse or keyboard */
+    background-color: #5d5d5d;
+	border: 1px solid #2b2b2b;
+	color:white;
+	
+	border-top-right-radius: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+ QMenuBar::item:pressed {
+     background-color: #151515;
+	 color:white;
+	 border: 0px;
+	 
+	border-top-right-radius: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
