@@ -12,44 +12,30 @@
     See the COPYING file for more details.
 */
 
+#ifndef YAMLFILEHANDLER_H
+#define YAMLFILEHANDLER_H
 
-
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
-
-#include <QMainWindow>
-#include <QFileDialog>
-#include <QDomDocument>
-#include <QDomElement>
-#include <QTextStream>
-#include <QDebug>
+#include <QObject>
 #include <QString>
+#include <QDomDocument>
+#include <QFile>
 #include <QStringList>
-#include <QTreeWidgetItem>
-#include "yamlfilehandler.h"
-
-namespace Ui {
-class MainWindow;
-}
-
-class MainWindow : public QMainWindow
+#include <QTextStream>
+class YamlFileHandler : public QObject
 {
     Q_OBJECT
-    
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    explicit YamlFileHandler(QString path,QObject *parent = 0);
     void Init();
-    
+    QDomDocument getYamlDocument();
+    QDomDocument yamlDocument;
+
+
 private:
-    Ui::MainWindow *ui;
-    void buildTreeModel();
-    YamlFileHandler* yamlHandler;
+    void ParseYamlFile();
+    QString yamlFilePath;
 
-
-private slots:
-    void actionNewTriggered();
-    void shapesTreeModelItemClicked(QTreeWidgetItem* qTreeWidgetItem,int index);
+    
 };
 
-#endif // MAINWINDOW_H
+#endif // YAMLFILEHANDLER_H

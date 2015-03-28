@@ -13,15 +13,28 @@
 */
 
 
-#include "yamlparser.h"
-#include <QApplication>
+#ifndef YAMLPARSER_H
+#define YAMLPARSER_H
 
-int main(int argc, char *argv[])
+#include <QObject>
+#include "mainwindow.h"
+
+class YamlParser : public QObject
 {
-    QApplication a(argc, argv);
+    Q_OBJECT
+public:
+    explicit YamlParser(QObject *parent = 0);
+     void Init();
 
-    YamlParser parser;
-    parser.Init();
+
+protected:
+    MainWindow* mainWindow;
+
+
+private:
+    void LoadStyleSheet();
+
     
-    return a.exec();
-}
+};
+
+#endif // YAMLPARSER_H

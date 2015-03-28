@@ -14,14 +14,37 @@
 
 
 #include "yamlparser.h"
-#include <QApplication>
 
-int main(int argc, char *argv[])
+YamlParser::YamlParser(QObject *parent) :
+    QObject(parent)
 {
-    QApplication a(argc, argv);
+}
 
-    YamlParser parser;
-    parser.Init();
-    
-    return a.exec();
+void YamlParser::Init()
+{
+    mainWindow=new MainWindow();
+
+    LoadStyleSheet();
+
+    mainWindow->Init();
+    mainWindow->show();
+
+}
+
+
+void YamlParser::LoadStyleSheet()
+{
+    QFile stylesheet("Style.qss");
+    if (stylesheet.exists())
+    {
+       if (stylesheet.open(QIODevice::ReadOnly | QIODevice::Text))
+       {
+           QString styleSheet = QLatin1String(stylesheet.readAll());
+           stylesheet.close();
+           mainWindow->setStyleSheet(styleSheet);
+       }
+
+    }
+
+
 }

@@ -13,8 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    yamlparser.cpp \
+    yamlfilehandler.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    yamlparser.h \
+    yamlfilehandler.h
 
 FORMS    += mainwindow.ui

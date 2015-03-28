@@ -12,16 +12,9 @@
     See the COPYING file for more details.
 */
 
+#include "yamlpaser.h"
 
-#include "yamlparser.h"
-#include <QApplication>
-
-int main(int argc, char *argv[])
+YamlPaser::YamlPaser(QObject *parent) :
+    QObject(parent)
 {
-    QApplication a(argc, argv);
-
-    YamlParser parser;
-    parser.Init();
-    
-    return a.exec();
 }
