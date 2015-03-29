@@ -44,6 +44,7 @@ void YamlParser::LoadStyleSheet()
            mainWindow->setStyleSheet(styleSheet);
        }
 
+
     }
 
 
